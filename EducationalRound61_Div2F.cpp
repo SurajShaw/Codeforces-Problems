@@ -1,3 +1,18 @@
+/**
+Minimum steps to delete a string by deleting substring comprising of same characters
+link - https://www.geeksforgeeks.org/minimum-steps-to-delete-a-string-after-repeated-deletion-of-palindrome-substrings/
+
+Codeforces Comment by Crazy_gamer
+
+1.let str[i][j] (i<=j) be the string formed by characters between ith and jth characters (inclusive). 2.define dp[i][j] to be the 
+minimum number of steps to remove all the characters of str[i][j]. 3.This removal can be done in two ways. i.remove the jth character 
+on its own, in this case dp[i][j]=1+dp[i][j-1] ii. dont remove the jth character on its own. rather remove it another character same as 
+the jth. there may be many such characters . let nth character be same as jth and of course i<=n<j .So u must delete all the characters 
+between nth and jth to bring jth and nth character side by side . And u have to do it in minimum step possible . there can be many such 
+n's between i and j . u have to choose the one that makes ur steps minimum . so here dp relation is dp[i][j]= dp[n+1][j-1]+dp[i][n] . 
+u have iterate through all the n's between i and j such that nth letter is same as jth letter and choose the minimum one
+
+*/
 #include <bits/stdc++.h>//Non-Standard
 using namespace std;
 int size; string str;
