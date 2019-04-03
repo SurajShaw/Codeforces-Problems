@@ -34,6 +34,12 @@ int f(int l, int r) {
     //Memoization Call, to reduce time-complexity
     if(dp[l][r] != -1) return dp[l][r];
     
+    /**
+    Either you can delete letters individually or when characters of same type are matched
+    If same type matched we calculate the possible way to delete the character in between the
+    range and the leftover part
+    The Minimum of these is the answer
+    */
     //dp[start][end] for Memoization
     //when deleting characters individually
     int ans = 1 + f(l+1, r);
